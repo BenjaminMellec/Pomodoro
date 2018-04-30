@@ -4,5 +4,52 @@
 
 body {
 	margin:  0;
+	text-align: center;
 }
 
+h1 {
+	margin: 7vh 0 0 0;
+	font-family: sans-serif;
+}
+
+.clock {}
+.clock-circle {
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+	border-radius: 50%;
+	border: 2px solid #333333;
+}
+.clock-timer {
+	width: 80%;
+	margin: 50% auto 0 auto;
+	transform: translateY(-50%);
+}
+.clock-timer-minutes {
+	display: inline-block;
+}
+.clock-timer-separator {
+	display: inline-block;
+}
+.clock-timer-seconds {
+	display: inline-block;
+}
+
+
+.buttons {}
+.button {
+	display: inline-block;
+	margin: 10px 10px;
+	padding: 5px 10px;
+	border: 1px solid black;
+	border-radius: 4px;
+}
+.button-play {
+	display: inline-block;
+}
+.button-pause {
+	display: inline-block;
+}
+.button-reset {
+	display: inline-block;
+}
