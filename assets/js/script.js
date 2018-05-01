@@ -1,0 +1,29 @@
+$( document ).ready(function() {
+
+	let minutes = 25;
+	let seconds = 0;
+
+	if (minutes < 10) {
+		minutes = '0' + minutes;
+	}
+	if (seconds < 10) {
+		seconds = '0' + seconds;
+	}
+
+	$('#js-clock-timer-minutes').html(minutes);
+	$('#js-clock-timer-seconds').html(seconds);
+
+
+	$('#js-switcher').click(function(){
+		if ($('#js-theme').html() == "Dark") {
+			$('#js-theme').html("Light");
+			$('body').addClass('body--dark');
+			$('#js-clock-circle').addClass('clock-circle--dark');
+		} else {
+			$('#js-theme').html("Dark");
+			$('body').removeClass('body--dark');
+			$('#js-clock-circle').removeClass('clock-circle--dark');
+		}
+	})
+
+});

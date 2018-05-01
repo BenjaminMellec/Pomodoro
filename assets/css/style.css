@@ -3,6 +3,193 @@
 }
 
 body {
+	position: relative;
 	margin:  0;
+	text-align: center;
+	color: #a1a5ad;
+	font-family: 'Gugi', cursive;
 }
 
+h1 {
+	margin: 0;
+}
+
+
+.switcher {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	border: 2px solid #a1a5ad;
+	width: 60px;
+	height: 60px;
+	border-radius: 4px;
+	transition: 0.2s;
+}
+.switcher:hover {
+	top: 46px;
+	left: 46px;
+	width: 64px;
+	height: 64px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	cursor: pointer;
+}
+.switcher-text {
+	margin: 0;
+	margin-top: 50%;
+	transform: translateY(-50%);
+}
+
+
+.pomodoro {
+	position: absolute;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+}
+
+
+.clock {
+	margin: 30px 0;
+}
+.clock-circle {
+	position: relative;
+	width: 350px;
+	height: 350px;
+	margin: 0 auto;
+	border-radius: 50%;
+	border: 1px solid transparent;
+	background-color: #ffffff;
+}
+.clock-circle--colored {
+	position: absolute;
+	z-index: -1;
+	width: 365px;
+	height: 365px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: red;
+	border-radius: 50%;
+	background: #ff3232;
+	background: -webkit-linear-gradient(#ff3232 0%, #ff9328 17%, #fff028 34%, #60ff30 51%, #27e1f9 68%, #4828ff 85%, #f900e9 99%);
+	background: -o-linear-gradient(#ff3232 0%, #ff9328 17%, #fff028 34%, #60ff30 51%, #27e1f9 68%, #4828ff 85%, #f900e9 99%);
+	background: linear-gradient(#ff3232 0%, #ff9328 17%, #fff028 34%, #60ff30 51%, #27e1f9 68%, #4828ff 85%, #f900e9 99%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3232', endColorstr='#f900e9',GradientType=0 );
+	opacity: 0.5;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.clock-circle--colored-back {
+	background: #ffffff;
+	z-index: -2;
+	opacity: 1;
+}
+.clock-timer {
+	width: 80%;
+	margin: 50% auto 0 auto;
+	transform: translateY(-50%);
+}
+.clock-timer-value {
+	font-size: 72px;
+	display: inline-block;
+}
+
+
+.buttons {}
+.button {
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	margin: 10px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: 0.2s;
+}
+.button:before {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: #ffffff;
+	border-radius: 4px;
+}
+.button:hover {
+	width: 54px;
+	height: 54px;
+	margin: 6px 8px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.button:hover > .button-play-triangle {
+	border-width: 13px 0 13px 24px;
+}
+.button:hover > .button-pause-rectangles {
+	width: 24px;
+	height: 24px;
+}
+.button:hover > .button-pause-rectangles:after {
+	left: 10px;
+	width: 4px;
+}
+.button:hover > .button-reset-square {
+	width: 24px;
+	height: 24px;
+}
+
+.button-element {
+	margin: 50% auto 0 auto;
+	transform: translateY(-50%);
+}
+.button-play {
+	background: rgba(96, 255, 48, 0.5);
+}
+.button-play-triangle {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 11px 0 11px 20px;
+	border-color: transparent transparent transparent #ffffff;
+	transition: 0.2s;
+}
+.button-pause {
+	background: rgba(255, 147, 40, 0.5);
+}
+.button-pause-rectangles {
+	position: relative;
+	width: 20px;
+	height: 20px;
+	background: #ffffff;
+	transition: 0.2s;
+}
+.button-pause-rectangles:after {
+	position: absolute;
+	top: 0;
+	left: 8px;
+	content: "";
+	width: 4px;
+	height: 100%;
+	background: rgba(255, 147, 40, 0.5);
+	transition: 0.2s;
+}
+.button-pause-rectangle--left {
+}
+.button-reset {
+	background: rgba(255, 50, 50, 0.5);
+}
+.button-reset-square {
+	width: 20px;
+	height: 20px;
+	background: #ffffff;
+	transition: 0.2s;
+}
+
+
+/* Dark theme */
+.body--dark {
+	background: #333333;
+}
+.clock-circle--dark {
+	background: #333333;
+}
