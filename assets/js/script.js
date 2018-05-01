@@ -14,4 +14,16 @@ $( document ).ready(function() {
 	$('#js-clock-timer-seconds').html(seconds);
 
 
+	$('#js-switcher').click(function(){
+		if ($('#js-theme').html() == "Dark") {
+			$('#js-theme').html("Light");
+			$('body').addClass('body--dark');
+			$('#js-clock-circle').addClass('clock-circle--dark');
+		} else {
+			$('#js-theme').html("Dark");
+			$('body').removeClass('body--dark');
+			$('#js-clock-circle').removeClass('clock-circle--dark');
+		}
+	})
+
 });

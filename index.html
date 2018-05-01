@@ -3,28 +3,40 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Pomodoro</title>
+		<link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
 		<link rel="stylesheet" href="assets/css/style.css">
-
 	</head>
 
 	<body>
+		<div class="switcher" id="js-switcher">
+			<p class="switcher-text"><span id="js-theme">Dark</span> Theme</p>
+		</div>
+		<div class="pomodoro">
+			<h1>Pomodoro</h1>
+			<div class="clock">
+				<div class="clock-circle" id="js-clock-circle">
+					<div class="clock-circle--colored"></div>
+					<div class="clock-circle--colored clock-circle--colored-back"></div>
+					<div class="clock-timer">
+						<div id="js-clock-timer-minutes" class="clock-timer-value"></div><!--
 
-		<h1>Pomodoro</h1>
-		<div class="clock">
-			<div class="clock-circle">
-				<div class="clock-timer">
-					<div id="js-clock-timer-minutes" class="clock-timer-minutes"></div><!--
+						--><p class="clock-timer-value">:</p><!--
 
-					--><p class="clock-timer-separator">:</p><!--
-
-					--><div id="js-clock-timer-seconds" class="clock-timer-seconds"></div>
+						--><div id="js-clock-timer-seconds" class="clock-timer-value"></div>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="buttons">
-			<div class="button button-play">play</div><!--
-			--><div class="button button-pause">pause</div><!--
-			--><div class="button button-reset">reset</div>
+			<div class="buttons">
+				<div class="button button-play">
+					<div class="button-play-triangle button-element"></div>
+				</div><!--
+				--><div class="button button-pause">
+					<div class="button-pause-rectangles button-element"></div>
+				</div><!--
+				--><div class="button button-reset">
+						<div class="button-reset-square button-element"></div>
+				</div>
+			</div>
 		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
