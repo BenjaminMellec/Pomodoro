@@ -3,6 +3,7 @@ $( document ).ready(function() {
 	let minutes = 25;
 	let seconds = 0;
 
+	//GESTION DE L'AFFICHAGE
 	if (minutes < 10) {
 		minutes = '0' + minutes;
 	}
@@ -14,6 +15,13 @@ $( document ).ready(function() {
 	$('#js-clock-timer-seconds').html(seconds);
 
 
+	//GESTION DES BOUTONS
+	$('#js-button-play-pause').click(function(){
+		$('#js-button-play, #js-button-pause').toggle();
+	})
+
+
+	//GESTION DES THEMES
 	$('#js-switcher').click(function(){
 		if ($('#js-theme').html() == "Dark") {
 			$('#js-theme').html("Light");
@@ -25,5 +33,6 @@ $( document ).ready(function() {
 			$('#js-clock-circle').removeClass('clock-circle--dark');
 		}
 	})
+
 
 });

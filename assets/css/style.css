@@ -137,10 +137,18 @@ h1 {
 	width: 24px;
 	height: 24px;
 }
-
 .button-element {
 	margin: 50% auto 0 auto;
 	transform: translateY(-50%);
+}
+.button-play-pause {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	border-radius: 4px;
 }
 .button-play {
 	background: rgba(96, 255, 48, 0.5);
@@ -154,6 +162,7 @@ h1 {
 	transition: 0.2s;
 }
 .button-pause {
+	display: none;
 	background: rgba(255, 147, 40, 0.5);
 }
 .button-pause-rectangles {
@@ -173,8 +182,6 @@ h1 {
 	background: rgba(255, 147, 40, 0.5);
 	transition: 0.2s;
 }
-.button-pause-rectangle--left {
-}
 .button-reset {
 	background: rgba(255, 50, 50, 0.5);
 }
@@ -184,7 +191,13 @@ h1 {
 	background: #ffffff;
 	transition: 0.2s;
 }
-
+.button-break {
+	background: rgba(72, 40, 255, 0.5);
+}
+.button-break-text {
+	color: #ffffff;
+	font-size: 16px;
+}
 
 /* Dark theme */
 .body--dark {
