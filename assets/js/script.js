@@ -16,9 +16,13 @@ $( document ).ready(function() {
 
 
 	//GESTION DES BOUTONS
+
+	//Play & pause
 	$('#js-button-play-pause').click(function(){
 		$('#js-button-play, #js-button-pause').toggle();
 	})
+
+	//Break & work
 
 
 	//GESTION DES THEMES
