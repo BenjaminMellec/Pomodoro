@@ -177,7 +177,15 @@ h1 {
 .button-break {
 	background: rgba(72, 40, 255, 0.5);
 }
+.button-work {
+	display: none;
+	background: rgba(72, 40, 255, 0.5);
+}
 .button-break-img {
+	width: 28px;
+	height: 28px;
+}
+.button-work-img {
 	width: 28px;
 	height: 28px;
 }

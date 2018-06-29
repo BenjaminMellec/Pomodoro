@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-////TIMER
+///// TIMER
 
 	var timeValue = 1500;
 	var minutes = Math.floor(timeValue / 60);
@@ -12,6 +12,8 @@ $( document ).ready(function() {
 	var play = $('#js-button-play');
 	var pause = $('#js-button-pause');
 
+	var reset = $('#js-button-reset');
+
 
 	playPause.click(function() {
 		if (pause.css('display') === 'none') {
@@ -21,7 +23,46 @@ $( document ).ready(function() {
 		}
 	})
 
-// display(minutes, seconds);
+
+	reset.click(function() {
+
+		timeValue = 1500;
+		minutes = Math.floor(timeValue / 60);
+		seconds = Math.floor(timeValue % 60);
+
+		clearInterval (interval);
+		if (pause.css('display') === 'block') {
+			$('#js-button-play, #js-button-pause').toggle();
+		}
+
+		display(minutes, seconds);
+	})
+
+
+	// breakWork.click(function() {
+	// 	if (work.css('display') === 'none') {
+	// 		timeValue = 300;
+	// 		minutes = Math.floor(timeValue / 60);
+	// 		seconds = Math.floor(timeValue % 60);
+	// 	} else {
+	// 		timeValue = 1500;
+	// 		minutes = Math.floor(timeValue / 60);
+	// 		seconds = Math.floor(timeValue % 60);
+	// 	}
+	// })
+
+
+	function display(m, s) {
+	    if (m < 10) {
+	        m = "0" + m;
+	    }
+	    if (s < 10) {
+	        s = "0" + s;
+	    }
+	    return $('#js-clock-timer-minutes').html(m) + $('#js-clock-timer-seconds').html(s);
+	}
+
+
 	function countdown() {
 
 		if (seconds <= 0) {
@@ -32,31 +73,15 @@ $( document ).ready(function() {
 			seconds--;
 			timeValue--;
 		}
-
 		console.log(minutes, seconds, timeValue);
+		display(minutes, seconds);
 
-		$('#js-clock-timer-minutes').html(minutes);
-		$('#js-clock-timer-seconds').html(seconds);
 	}
 
-	// function display(m, s) {
-	//     if (m < 10) {
-	//         m = "0" + m;
-	//     }
-	//     if (s < 10) {
-	//         s = "0" + s;
-	//     }
-	// }
 
 
 
-
-
-
-
-
-
-////GRAPHICS
+///// GRAPHICS
 
 	$('#js-button-play-pause').click(function(){
 		$('#js-button-play, #js-button-pause').toggle();
