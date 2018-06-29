@@ -94,13 +94,14 @@ h1 {
 }
 
 
-.buttons {}
+.buttons {
+	display: inline-flex;
+}
 .button {
 	position: relative;
-	display: inline-block;
 	width: 50px;
 	height: 50px;
-	margin: 10px;
+	margin: 0 10px;
 	border-radius: 4px;
 	cursor: pointer;
 	transition: 0.2s;
@@ -117,30 +118,20 @@ h1 {
 	border-radius: 4px;
 }
 .button:hover {
-	width: 54px;
-	height: 54px;
-	margin: 6px 8px;
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
-.button:hover > .button-play-triangle {
-	border-width: 13px 0 13px 24px;
-}
-.button:hover > .button-pause-rectangles {
-	width: 24px;
-	height: 24px;
-}
-.button:hover > .button-pause-rectangles:after {
-	left: 10px;
-	width: 4px;
-}
-.button:hover > .button-reset-square {
-	width: 24px;
-	height: 24px;
-}
-
 .button-element {
 	margin: 50% auto 0 auto;
 	transform: translateY(-50%);
+}
+.button-play-pause {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	border-radius: 4px;
 }
 .button-play {
 	background: rgba(96, 255, 48, 0.5);
@@ -154,6 +145,7 @@ h1 {
 	transition: 0.2s;
 }
 .button-pause {
+	display: none;
 	background: rgba(255, 147, 40, 0.5);
 }
 .button-pause-rectangles {
@@ -173,8 +165,6 @@ h1 {
 	background: rgba(255, 147, 40, 0.5);
 	transition: 0.2s;
 }
-.button-pause-rectangle--left {
-}
 .button-reset {
 	background: rgba(255, 50, 50, 0.5);
 }
@@ -183,6 +173,13 @@ h1 {
 	height: 20px;
 	background: #ffffff;
 	transition: 0.2s;
+}
+.button-break {
+	background: rgba(72, 40, 255, 0.5);
+}
+.button-break-img {
+	width: 28px;
+	height: 28px;
 }
 
 
