@@ -14,42 +14,7 @@ $( document ).ready(function() {
 
 	var reset = $('#js-button-reset');
 
-
-	playPause.click(function() {
-		if (pause.css('display') === 'none') {
-			interval = setInterval(countdown, 1000);
-		} else {
-			clearInterval (interval);
-		}
-	})
-
-
-	reset.click(function() {
-
-		timeValue = 1500;
-		minutes = Math.floor(timeValue / 60);
-		seconds = Math.floor(timeValue % 60);
-
-		clearInterval (interval);
-		if (pause.css('display') === 'block') {
-			$('#js-button-play, #js-button-pause').toggle();
-		}
-
-		display(minutes, seconds);
-	})
-
-
-	// breakWork.click(function() {
-	// 	if (work.css('display') === 'none') {
-	// 		timeValue = 300;
-	// 		minutes = Math.floor(timeValue / 60);
-	// 		seconds = Math.floor(timeValue % 60);
-	// 	} else {
-	// 		timeValue = 1500;
-	// 		minutes = Math.floor(timeValue / 60);
-	// 		seconds = Math.floor(timeValue % 60);
-	// 	}
-	// })
+	var breakWork = $('#js-button-break-work');
 
 
 	function display(m, s) {
@@ -61,10 +26,7 @@ $( document ).ready(function() {
 	    }
 	    return $('#js-clock-timer-minutes').html(m) + $('#js-clock-timer-seconds').html(s);
 	}
-
-
 	function countdown() {
-
 		if (seconds <= 0) {
 			seconds = 59;
 			minutes --;
@@ -75,19 +37,54 @@ $( document ).ready(function() {
 		}
 		console.log(minutes, seconds, timeValue);
 		display(minutes, seconds);
-
 	}
+
+
+	playPause.click(function() {
+		if (pause.css('display') === 'none') {
+			interval = setInterval(countdown, 1000);
+		} else {
+			clearInterval (interval);
+		}
+	});
+	reset.click(function() {
+		minutes = Math.floor(timeValue / 60);
+		seconds = Math.floor(timeValue % 60);
+		if (pause.is(':visible')) {
+			$('#js-button-play, #js-button-pause').toggle();
+		}
+		if ($('#js-button-break').is(':visible')) {
+			timeValue = 1500;
+		}
+		if ($('#js-button-work').is(':visible')) {
+			timeValue = 300;
+		}
+		display(minutes, seconds);
+		clearInterval (interval);
+	});
+	breakWork.click(function breakWork() {
+		if( $('#js-button-break').is(':visible')) {
+			timeValue = 300;
+			minutes = Math.floor(timeValue / 60);
+			seconds = Math.floor(timeValue % 60);
+		} else {
+			timeValue = 1500;
+			minutes = Math.floor(timeValue / 60);
+			seconds = Math.floor(timeValue % 60);
+		}
+		display(minutes, seconds);
+	});
 
 
 
 
 ///// GRAPHICS
-
 	$('#js-button-play-pause').click(function(){
 		$('#js-button-play, #js-button-pause').toggle();
 	})
-
-
+	$('#js-button-break-work').click(function(){
+		$('#js-button-break, #js-button-work').toggle();
+	})
 	//GESTION DES THEMES
 	$('#js-switcher').click(function(){
 		if ($('#js-theme').html() == "Dark") {
